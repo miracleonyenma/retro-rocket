@@ -1,3 +1,7 @@
+# Retro Rocket
+
+This is a simple rocket game built by [v0.dev](https://v0.dev)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
