@@ -112,11 +112,13 @@ export function RetroRocketGame() {
     const thrust = -0.15 * (canvas.height / 800);
     let isThrusting = false;
 
-    const handlePointerDown = () => {
+    const handlePointerDown = (e: PointerEvent) => {
+      e.preventDefault();
       isThrusting = true;
     };
 
-    const handlePointerUp = () => {
+    const handlePointerUp = (e: PointerEvent) => {
+      e.preventDefault();
       isThrusting = false;
     };
 
@@ -332,17 +334,18 @@ export function RetroRocketGame() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4 select-none">
       <h1 className="text-2xl font-bold mb-4 text-white font-mono">
         Retro Rocket Game
       </h1>
       <div className="relative w-full max-w-[600px]">
         <canvas
           ref={canvasRef}
-          className="border border-gray-300 w-full"
+          className="border border-gray-300 w-full cursor-pointer"
           style={{
             imageRendering: "pixelated",
             aspectRatio: `${canvasSize.width} / ${canvasSize.height}`,
+            touchAction: "none",
           }}
         />
         {gameOver && (
